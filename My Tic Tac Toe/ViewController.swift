@@ -13,15 +13,17 @@ class ViewController: UIViewController {
     
     var ActivePlayer = 1  // x
     
-    @IBAction func action(_ sender: AnyObject)   // display x or o 
+    @IBAction func action(_ sender: AnyObject)   // display x or o
     {
         if (ActivePlayer == 1 )
         {
             sender.setImage(UIImage(named: "x.png"), for: UIControlState())
+            ActivePlayer = 2
         }
         else
         {
-            sender.setImage(UIImage(named: "o.png"), for: UIControlState())
+            sender.setImage(UIImage(named: "o.png"), for: UIControlState())    // allows you to switch from x or o 
+            ActivePlayer = 1
         }
         
     }
