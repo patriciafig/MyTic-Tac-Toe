@@ -9,6 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // 1. Create a variable that keeps track of whose turn it is
+    
+    var ActivePlayer = 1  // x
+    
+    @IBAction func action(_ sender: AnyObject)   // display x or o 
+    {
+        if (ActivePlayer == 1 )
+        {
+            sender.setImage(UIImage(named: "x.png"), for: UIControlState())
+        }
+        else
+        {
+            sender.setImage(UIImage(named: "o.png"), for: UIControlState())
+        }
+        
+    }
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
