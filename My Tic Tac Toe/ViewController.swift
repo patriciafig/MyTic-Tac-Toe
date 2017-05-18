@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     var ActiveGame = true
     
     
+    @IBOutlet weak var label: UILabel!     // has won message 
+    
+    
     @IBAction func action(_ sender: AnyObject)   // display x or o
     {
         // check game status according to the sender tag
@@ -61,16 +64,15 @@ class ViewController: UIViewController {
                     print ("O");
                 
                 }
-            
-            
             }
-            
-            
-            
-        
         }
-        
-        
+    }
+    
+    
+    @IBOutlet weak var playAgainButton: UIButton!    // outlet
+    
+    @IBAction func playAgain(_ sender: AnyObject)    // button
+    {
         
     }
     
