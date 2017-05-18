@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         // check game status according to the sender tag
         
         if (GameStatus[sender.tag-1] == 0)
-        {       // can only place x or o at one time 
+        {
+            GameStatus[sender.tag-1] = ActivePlayer     // can't override any game piece 
+            
+               // can only place x or o at one time
             if (ActivePlayer == 1 )
             {
                 sender.setImage(UIImage(named: "x.png"), for: UIControlState())
