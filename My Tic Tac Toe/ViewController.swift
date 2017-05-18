@@ -53,17 +53,18 @@ class ViewController: UIViewController {
                 if GameStatus[combinations[0]] == 1
                 {
                  //  x has won
-                    print ("X");
+                    label.text = "X HAS WON!"   // DISPLAYS ON LABEL
                 
                 }
                 else
                 {
                 
                 // o has won
-                    
-                    print ("O");
-                
+                    label.text = "O HAS WON"    // DISPLAYS ON LABEL
                 }
+                
+                playAgainButton.isHidden = false;
+                label.isHidden = false
             }
         }
     }
@@ -73,10 +74,24 @@ class ViewController: UIViewController {
     
     @IBAction func playAgain(_ sender: AnyObject)    // button
     {
+    // enable user to restart game
         
+        GameStatus = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ActiveGame = true
+        ActivePlayer = 1
+        
+        playAgainButton.isHidden = true
+        label.isHidden = true
+        
+        for i in 1...9
+        {
+            
+        let button = view.viewWithTag(i) as! UIButton
+        button.setImage(nil, for: UIControlState())
+            
+        }
+    
     }
-    
-    
     
 
     override func viewDidLoad() {
