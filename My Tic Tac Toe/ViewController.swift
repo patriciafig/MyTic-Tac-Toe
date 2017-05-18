@@ -12,18 +12,25 @@ class ViewController: UIViewController {
     // 1. Create a variable that keeps track of whose turn it is
     
     var ActivePlayer = 1  // x
+    var GameStatus = [0,0,0,0,0,0,0,0,0]   // each represent a place in the board
     
     @IBAction func action(_ sender: AnyObject)   // display x or o
     {
-        if (ActivePlayer == 1 )
-        {
-            sender.setImage(UIImage(named: "x.png"), for: UIControlState())
-            ActivePlayer = 2
-        }
-        else
-        {
-            sender.setImage(UIImage(named: "o.png"), for: UIControlState())    // allows you to switch from x or o 
-            ActivePlayer = 1
+        // check game status according to the sender tag
+        
+        if (GameStatus[sender.tag-1] == 0)
+        {       // can only place x or o at one time 
+            if (ActivePlayer == 1 )
+            {
+                sender.setImage(UIImage(named: "x.png"), for: UIControlState())
+                ActivePlayer = 2
+            }
+            else
+            {
+                sender.setImage(UIImage(named: "o.png"), for: UIControlState())    // allows you to switch from x or o
+                ActivePlayer = 1
+            }
+        
         }
         
     }
